@@ -1,14 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, UserIcon } from "lucide-react";
-import { APP_NAME } from "@/libs/constants";
+import { APP_NAME, SERVER_URL } from "@/libs/constants";
 import Image from "next/image";
 import Link from "next/link";
+import ModeToggle from "./modeToggle";
 
 const Header = () => {
   return (
     <header className="py-1  border-b">
       <div className="flex-between wrapper">
-        <div className="flex-start gap-5">
+        <Link href={SERVER_URL} className="flex-start gap-5">
           <Image
             src="/images/logo.svg"
             alt={`${APP_NAME} Logo`}
@@ -17,9 +18,10 @@ const Header = () => {
             priority={true}
           />
           <h3 className="hidden lg:block font-bold text-2xl">ProShop</h3>
-        </div>
+        </Link>
 
         <div className="space-x-2">
+          <ModeToggle />
           <Button asChild variant="ghost">
             <Link className="flex-start gap-2" href={"/cart"}>
               <ShoppingCart />
