@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, UserIcon } from "lucide-react";
-import { APP_NAME, SERVER_URL } from "@/libs/constants";
+import { APP_NAME, SERVER_URL } from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
 import ModeToggle from "./modeToggle";
