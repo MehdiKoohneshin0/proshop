@@ -1,12 +1,7 @@
 import { Button } from "@/components/ui/button";
 import ModeToggle from "./modeToggle";
 import Link from "next/link";
-import {
-  EllipsisVertical,
-  MenuIcon,
-  ShoppingCart,
-  UserIcon,
-} from "lucide-react";
+import { EllipsisVertical, ShoppingCart, UserIcon } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -26,7 +21,7 @@ const NavMenu = () => {
             <span>Cart</span>
           </Link>
         </Button>
-        <Button asChild variant="ghost">
+        <Button asChild variant="default">
           <Link className="flex-start gap-2" href={"/sign-in"}>
             <UserIcon />
             <span>Sign In</span>
