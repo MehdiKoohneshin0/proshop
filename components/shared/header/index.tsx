@@ -1,9 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { ShoppingCart, UserIcon } from "lucide-react";
 import { APP_NAME, SERVER_URL } from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
-import ModeToggle from "./modeToggle";
+import NavMenu from "./nav-menu";
 
 const Header = () => {
   return (
@@ -19,22 +17,7 @@ const Header = () => {
           />
           <h3 className="hidden lg:block font-bold text-2xl">ProShop</h3>
         </Link>
-
-        <div className="space-x-2">
-          <ModeToggle />
-          <Button asChild variant="ghost">
-            <Link className="flex-start gap-2" href={"/cart"}>
-              <ShoppingCart />
-              <span>Cart</span>
-            </Link>
-          </Button>
-          <Button asChild variant="ghost">
-            <Link className="flex-start gap-2" href={"/sign-in"}>
-              <UserIcon />
-              <span>Sign In</span>
-            </Link>
-          </Button>
-        </div>
+        <NavMenu />
       </div>
     </header>
   );

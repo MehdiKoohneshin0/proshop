@@ -15,7 +15,22 @@ import { Button } from "@/components/ui/button";
 
 import { useState, useEffect } from "react";
 
-const ModeToggle = () => {
+type Props = {
+  size?:
+    | "default"
+    | "xs"
+    | "sm"
+    | "lg"
+    | "icon"
+    | "icon-xs"
+    | "icon-sm"
+    | "icon-lg"
+    | null
+    | undefined;
+  label?: boolean;
+};
+
+const ModeToggle = ({ size = "default", label = false }: Props) => {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState<boolean>(false);
 
@@ -30,7 +45,7 @@ const ModeToggle = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
-          size="icon"
+          size={size}
           variant="ghost"
           className="focus-visible:ring-0 focus-visible:ring-offset-0"
         >
@@ -41,6 +56,7 @@ const ModeToggle = () => {
           ) : (
             <SunIcon />
           )}
+          {label && "Theme"}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
