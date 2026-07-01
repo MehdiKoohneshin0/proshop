@@ -15,17 +15,16 @@ datasource db {
 model Product {
   id          String   @id @default(cuid())
   name        String
-  slug        String   @unique
+  slug        String   @unique(map: "product_slug_idx")
   category    String
   description String?
   images      String[]
-  price       Decimal  @db.Decimal(10, 2)
+  price       Decimal  @default(0) @db.Decimal(12, 2)
   brand       String
-  rating      Decimal  @default(0) @db.Decimal(2, 1)
+  rating      Decimal  @default(0) @db.Decimal(3, 2)
   numReviews  Int      @default(0)
   stock       Int      @default(0)
   isFeatured  Boolean  @default(false)
   banner      String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  createdAt   DateTime @default(now()) @db.Timestamp(6)
 }

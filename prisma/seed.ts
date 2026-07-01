@@ -116,6 +116,7 @@ const productData: Prisma.ProductCreateInput[] = [
 ];
 
 export async function main() {
+  await prisma.product.deleteMany();
   for (const u of productData) {
     await prisma.product.create({ data: u });
   }

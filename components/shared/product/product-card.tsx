@@ -37,7 +37,7 @@ const ProductCard = ({ product }: { product: Product }) => {
           <span className="text-xs dark:text-gray-400">
             {product.rating} stars
           </span>
-          <ProductPrice price={product.price} />
+          <ProductPrice price={Number(product.price)} />
         </div>
       </CardContent>
     </Card>
